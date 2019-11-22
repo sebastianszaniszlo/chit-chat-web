@@ -1,0 +1,18 @@
+import { ActionTree, ActionContext } from 'vuex';
+import { State } from '@/store/users/state';
+import { UsersService } from '@/feathers/services/users-service';
+
+const usersService = new UsersService();
+
+export class Actions implements ActionTree<State, any> {
+    [key: string]: ((injectee: ActionContext<State, any>, payload: any) => any);
+
+    public fetchUsersAsync = async (context: ActionContext<State, any>) => {
+        try {
+            const response = await usersService.fetchUsersAsync();
+            context.commit('setUsers', response.data);
+        } catch (e) {
+            throw new Error('Could not load users');
+        }
+    }
+}

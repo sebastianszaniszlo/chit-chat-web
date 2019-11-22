@@ -1,0 +1,21 @@
+$small-size: 3.2rem;
+
+.avatar {
+  background: $white;
+  color: $primary;
+  width: $small-size;
+  border-radius: $small-size / 2;
+  display: block;
+  width: $small-size;
+  height: $small-size;
+  margin: 1rem auto;
+
+  .initials {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
