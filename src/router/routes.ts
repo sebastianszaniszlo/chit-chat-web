@@ -1,12 +1,6 @@
 import { RouteConfig } from 'vue-router';
-import Home from '@/components/chat/chat.vue';
 import Login from '@/components/login/login.vue';
-
-const home: RouteConfig = {
-  path: '/',
-  name: 'home',
-  component: Home,
-};
+import Chat from '@/components/chat/chat.vue';
 
 const login: RouteConfig = {
   path: '/login',
@@ -14,4 +8,10 @@ const login: RouteConfig = {
   component: Login,
 };
 
-export default [ home, login ];
+const chat: RouteConfig = {
+  path: '/',
+  name: 'chat',
+  component: Chat,
+};
+
+export default [ login, chat ];

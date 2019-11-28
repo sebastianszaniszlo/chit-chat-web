@@ -1,0 +1,48 @@
+$small-size: 3.2rem;
+$small-font-size: 1.6rem;
+$large-size: 12rem;
+$large-font-size: 6rem;
+
+.avatar {
+  background: $grey-lighter;
+  color: $primary;
+  display: block;
+  margin: 1rem auto;
+
+  &.is-small {
+    width: $small-size;
+    height: $small-size;
+    border-radius: $small-size / 2;
+    font-size: $small-font-size;
+  }
+
+  &.is-large {
+    width: $large-size;
+    height: $large-size;
+    border-radius: $large-size / 2;
+    font-size: $large-font-size;
+  }
+
+  .initials {
+    // font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  // .status {
+  //   background-color: white;
+  //   position: absolute;
+  //   top: 32px;
+  //   left: 32px;
+  //   z-index: 1;
+  //   padding: 2px;
+  //   border-radius: 12px;
+  // }
+  
+  // .bowtie-icon {
+  //   font-size: 16px;
+  // }
+}

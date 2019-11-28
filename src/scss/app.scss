@@ -1,20 +1,4 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "utils/_all";
 @import "~buefy/src/scss/buefy-build.scss";
-@import '_colours';
-@import "_avatar";
-@import "_sidebar";
-
-html {
-  min-height: calc(100vh);
-  overflow-y: auto;
-  font-size: 14px;
-
-  // body {
-  //   margin: 0;
-  // }
-}
-
-.columns {
-  &.is-fullheight {
-    min-height: 100vh;
-  }
-}
+@import "chit-chat";

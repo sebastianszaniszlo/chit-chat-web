@@ -1,9 +1,9 @@
 <template>
   <div class="columns is-mobile is-gapless has-margin-bottom-0">
-    <aside class="column is-narrow is-narrow-tablet aside is-fullheight">
+    <aside class="column is-narrow is-narrow-tablet aside">
       <sidebar />
     </aside>
-    <div class="column is-fullheight">
+    <div class="column">
       <slot />
     </div>
   </div>
