@@ -1,0 +1,17 @@
+@import "utils/_all";
+@import "components/_avatar";
+@import "components/_chat";
+@import "components/_searchbar";
+@import "components/_sidebar";
+
+html {
+  min-height: calc(100vh);
+  overflow-y: auto;
+  background: $background;
+}
+
+.columns {
+  &.is-fullheight {
+    min-height: 100vh;
+  }
+}
