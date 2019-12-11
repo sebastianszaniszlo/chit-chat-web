@@ -1,16 +1,17 @@
 <template>
-  <!-- <div class="chat-sidebar"> -->
-    <div class="column is-one-fifth">
-      <search-bar/>
-      <chat-item class="chat-item" />
-      <chat-item class="chat-item" />
-      <chat-item class="chat-item" />
-      <chat-item class="chat-item" />
-      <chat-item class="chat-item" />
-      <chat-item class="chat-item" />
-
-    </div>
-  <!-- </div>   -->
+  <div class="chat-sidebar is-fullheight">
+    <search-bar/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+    <chat-item/>
+  </div>
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <!-- <div class="chat-item"> -->
+  <div class="chat-item">
     <div class="columns is-gapless is-vcentered has-margin-bottom-0">
       <div class="column">
         <avatar class="is-small" :firstName="'John'" :lastName="'Doe'"/>
@@ -17,7 +17,7 @@
         </div>
       </div>      
     </div>
-  <!-- </div>   -->
+  </div>
 </template>
 
 <script lang="ts">
