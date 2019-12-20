@@ -13,16 +13,14 @@ export abstract class FeathersClient {
     this.client = feathers()
       .configure(socketio(socket))
       .configure(auth());
-
-    this.client.authenticate({
-      strategy: 'local',
-      email: 'seb@seb.com',
-      password: '123456',
-    });
   }
 
   protected async getAsync<T>(serviceName: string, data?: any): Promise<T> {
     return this.client.service(serviceName).find();
+  }
+
+  protected async postAsync<T>(serviceName: string, data: any): Promise<T> {
+    return this.client.service(serviceName).create(data);
   }
 
   protected abstract setupSocketNotifications(): void;

@@ -19,6 +19,9 @@ export class AuthService extends FeathersClient {
   public async logoutAsync(): Promise<AuthenticationResult | null> {
     return await this.client.logout();
   }
+  public async isLoggedIn(): Promise<string | null> {
+    return await this.client.authentication.getAccessToken();
+  }
 
   protected setupSocketNotifications(): void {
     return;
