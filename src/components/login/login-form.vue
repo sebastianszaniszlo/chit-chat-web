@@ -25,6 +25,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import { AuthService } from '@/feathers/services/auth-service';
 import { LoginRequest } from '@/feathers/requests/login-request';
+import { FeathersError } from '@feathersjs/errors';
 
 const authService = new AuthService();
 
@@ -34,14 +35,21 @@ export default class LoginForm extends Vue {
   private password: string | null = null;
 
   private async login(): Promise<void> {
-    // TODO: Validation
     const request: LoginRequest = {
       email: this.email!,
       password: this.password!,
     };
 
-    await authService.loginAsync(request);
-    this.$router.push('home');
+    try {
+      await authService.loginAsync(request);
+      this.$router.push({ name: 'chat' });
+    } catch (e) {
+      this.$buefy.snackbar.open({
+        message: e.message,
+        type: 'is-danger',
+        position: 'is-top',
+      });
+    }
   }
 }
 </script>

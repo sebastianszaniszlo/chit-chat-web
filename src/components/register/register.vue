@@ -1,19 +1,19 @@
 <template>
   <layout>
-    <login-form></login-form>
+    <register-form></register-form>
   </layout>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import LoginForm from '@/components/login/login-form.vue';
+import RegisterForm from '@/components/register/register-form.vue';
 import layout from '@/layouts/basic-layout.vue';
 
 @Component({
   components: {
     layout,
-    LoginForm,
+    RegisterForm,
   },
 })
-export default class Login extends Vue {}
+export default class Register extends Vue {}
 </script>

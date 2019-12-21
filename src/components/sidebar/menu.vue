@@ -31,12 +31,41 @@
         <span class="title">Help</span>
       </a>
     </div>
+    <div class="menu-item">
+      <a>
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12" y2="17"></line></svg>
+        </span>
+        <span class="title" @click="logout">Logout</span>
+      </a>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { AuthService } from '@/feathers/services/auth-service';
+import { FeathersError } from '@feathersjs/errors';
+
+const authService = new AuthService();
+
 @Component
 export default class Menu extends Vue {
+  private async logout(): Promise<void> {
+    try {
+      authService.logoutAsync();
+    } catch (e) {
+      if (e instanceof FeathersError) {
+        this.$buefy.snackbar.open({
+          message: e.message,
+          type: 'is-danger',
+          position: 'is-top',
+        });
+      } else {
+        // tslint:disable:next-line no-console
+        console.log(e);
+      }
+    }
+  }
 }
 </script>
