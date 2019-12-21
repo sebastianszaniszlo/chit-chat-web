@@ -70,17 +70,11 @@ export default class RegisterForm extends Vue {
       this.$store.dispatch('users/registerUserAsync', request);
       this.$router.push({ name: 'chat' });
     } catch (e) {
-      // TODO(e will always be a FeathersError or an Errors aka will always have a mssage)
-      if (e instanceof FeathersError) {
-        this.$buefy.snackbar.open({
-          message: e.message,
-          type: 'is-danger',
-          position: 'is-top',
-        });
-      } else {
-        // tslint:disable:next-line no-console
-        console.log(e);
-      }
+      this.$buefy.snackbar.open({
+        message: e.message,
+        type: 'is-danger',
+        position: 'is-top',
+      });
     }
   }
 }

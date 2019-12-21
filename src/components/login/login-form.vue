@@ -35,7 +35,6 @@ export default class LoginForm extends Vue {
   private password: string | null = null;
 
   private async login(): Promise<void> {
-    // TODO: Validation
     const request: LoginRequest = {
       email: this.email!,
       password: this.password!,
@@ -45,16 +44,11 @@ export default class LoginForm extends Vue {
       await authService.loginAsync(request);
       this.$router.push({ name: 'chat' });
     } catch (e) {
-      if (e instanceof FeathersError) {
-        this.$buefy.snackbar.open({
-          message: e.message,
-          type: 'is-danger',
-          position: 'is-top',
-        });
-      } else {
-        // tslint:disable:next-line no-console
-        console.log(e);
-      }
+      this.$buefy.snackbar.open({
+        message: e.message,
+        type: 'is-danger',
+        position: 'is-top',
+      });
     }
   }
 }

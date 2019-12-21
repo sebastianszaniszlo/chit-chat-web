@@ -1,6 +1,6 @@
 <template>
   <layout>
-      <register-form></register-form>
+    <register-form></register-form>
   </layout>
 </template>
 
